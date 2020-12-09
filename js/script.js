@@ -11,28 +11,30 @@ var slider= new Vue({
 
   },
   created : function() {
-    this.autoload = setInterval(
-      () => {
+    this.autoload = setInterval(() => {
         this.nextImage();
-      },2000
-    );
-  }
-  ,
+      }, 2000);
+  },
   methods: {
     nextImage : function () {
       this.indexImg++;
       if(this.indexImg == this.images.length){
         this.indexImg = 0;
       }
-      clearInterval(this.autoload());
+      // clearInterval(this.autoload);
     },
     prevImage : function () {
       this.indexImg--;
        if(this.indexImg < 0){
         this.indexImg = this.images.length - 1;
     }
-    clearInterval(this.autoload());
-  }
-
+    // clearInterval(this.autoload);
+  },
+  stop : function() {
+      clearInterval(this.autoload);
+      this.autoload = setInterval(() => {
+          this.nextImage();
+        }, 2000);
+    }
   }
 })
