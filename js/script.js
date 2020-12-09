@@ -11,7 +11,7 @@ var slider= new Vue({
 
   },
   created : function() {
-    this.autoLoad = setInterval(
+    this.autoload = setInterval(
       () => {
         this.nextImage();
       },2000
