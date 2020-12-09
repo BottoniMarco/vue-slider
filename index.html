@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>slider-Vue</title>
+  </head>
+  <body>
+    <div id="slider">
+      <div id="wrapper">
+        <div class="prev">
+          <i class="fas fa-chevron-left"@click="prevImage"></i>
+        </div>
+        <div class="slide">
+          <img :src="images[indexImg]" alt="">
+        </div>
+        <div class="next">
+          <i class="fas fa-chevron-right" @click="nextImage"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
+
+  </body>
+</html>
