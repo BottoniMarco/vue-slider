@@ -9,6 +9,14 @@ var slider= new Vue({
       "https://comune-info.net/wp-content/uploads/2016/09/paesaggio-borghetto-poggio-bianco.jpg"
     ]
   },
+  created : function() {
+    setInterval(
+      () => {
+        this.nextImage();
+      },2000
+    );
+  }
+  ,
   methods: {
     nextImage : function () {
       this.indexImg++;
@@ -21,6 +29,11 @@ var slider= new Vue({
        if(this.indexImg < 0){
         this.indexImg = this.images.length - 1;
     }
-    }
+  },
+  stop: function () {
+    this.indexImg = 0;
+    clearInterval(nextImage);
+
+  }
   }
 })
