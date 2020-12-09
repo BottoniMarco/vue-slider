@@ -10,6 +10,7 @@ body {
 }
 
 #wrapper {
+  position: relative;
   display: flex;
   height: 400px;
   width: 600px;
@@ -38,4 +39,19 @@ body {
 .slide img {
   width: 80%;
   height: 80%;
+}
+
+.nav {
+  position :absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav i {
+  padding : 5px;
+}
+
+.active {
+  color: green
 }
