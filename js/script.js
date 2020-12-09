@@ -20,18 +20,18 @@ var slider= new Vue({
   ,
   methods: {
     nextImage : function () {
-      clearInterval(this.autoload());
       this.indexImg++;
       if(this.indexImg == this.images.length){
         this.indexImg = 0;
       }
+      clearInterval(this.autoload());
     },
     prevImage : function () {
-      clearInterval(this.autoload());
       this.indexImg--;
        if(this.indexImg < 0){
         this.indexImg = this.images.length - 1;
     }
+    clearInterval(this.autoload());
   }
 
   }
