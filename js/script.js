@@ -7,10 +7,11 @@ var slider= new Vue({
       "https://www.filodiritto.com/sites/default/files/styles/lg/public/2019-12/paesaggio_rurale.jpg?itok=XIq6z79g",
       "https://www.architetturaecosostenibile.it/images/stories/2016/promuoviamo-paesaggio-italiano.jpg",
       "https://comune-info.net/wp-content/uploads/2016/09/paesaggio-borghetto-poggio-bianco.jpg"
-    ]
+    ],
+
   },
   created : function() {
-    setInterval(
+    this.autoLoad = setInterval(
       () => {
         this.nextImage();
       },2000
@@ -19,21 +20,19 @@ var slider= new Vue({
   ,
   methods: {
     nextImage : function () {
+      clearInterval(this.autoload());
       this.indexImg++;
       if(this.indexImg == this.images.length){
         this.indexImg = 0;
       }
     },
     prevImage : function () {
+      clearInterval(this.autoload());
       this.indexImg--;
        if(this.indexImg < 0){
         this.indexImg = this.images.length - 1;
     }
-  },
-  stop: function () {
-    this.indexImg = 0;
-    clearInterval(nextImage);
-
   }
+
   }
 })

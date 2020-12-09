@@ -13,13 +13,13 @@
     <div id="slider">
       <div id="wrapper">
         <div class="prev">
-          <i class="fas fa-chevron-left"@click="stop"></i>
+          <i class="fas fa-chevron-left"@click="prevImage"></i>
         </div>
         <div class="slide">
           <img :src="images[indexImg]" alt="">
         </div>
         <div class="next">
-          <i class="fas fa-chevron-right" @click="stop"></i>
+          <i class="fas fa-chevron-right" @click="nextImage"></i>
         </div>
         <div class="nav">
           <i v-for="(image, index) in images" v-bind:class="(index == indexImg) ? 'active':'null' " class="fas fa-circle "> </i>
